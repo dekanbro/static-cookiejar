@@ -1,0 +1,24 @@
+name: Deploy to Web3
+run-name: ${{ github.actor }} is deploying to out Web3 🚀
+on:
+  push:
+    branches: main
+jobs:
+  Deploy-To-Web3-Storage:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - uses: web3-storage/add-to-web3@v2
+        id: web3
+        with:
+          web3_token: ${{ secrets.WEB3_STORAGE_TOKEN }}
+          path_to_add: ''
+
+      # "bafkreicysg23kiwv34eg2d7qweipxwosdo2py4ldv42nbauguluen5v6am"
+      - run: echo ${{ steps.web3.outputs.cid }}
+
+      # "https://dweb.link/ipfs/bafkreicysg23kiwv34eg2d7qweipxwosdo2py4ldv42nbauguluen5v6am"
+      - run: echo ${{ steps.web3.outputs.url }}
