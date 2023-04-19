@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookie Jar - Playful Cookie Containers</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+              /* General styles */
+      body {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #444;
+        margin: 0;
+      }
+
+      a {
+        color: #ff8c00;
+        text-decoration: none;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Header styles */
+      header {
+        background-color: #fff;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      nav ul li {
+        display: inline-block;
+        margin-right: 20px;
+      }
+
+      nav ul li:last-child {
+        margin-right: 0;
+      }
+
+      nav ul li a {
+        font-weight: bold;
+      }
+
+      /* Hero section styles */
+      #hero {
+        background-color: #ff8c00;
+        color: #fff;
+        text-align: center;
+        padding: 100px 0;
+      }
+
+      /* Hero section styles */
+      #hero {
+        background-color: #f8e0c8;
+        background-image: linear-gradient(315deg, #f8e0c8 0%, #faaca8 74%);
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+        color: #fff;
+        padding: 100px 0;
+        text-align: center;
+      }
+
+      #hero h1 {
+        font-size: 60px;
+        margin: 0 0 20px 0;
+      }
+
+      #hero p {
+        font-size: 24px;
+        margin: 0 0 40px 0;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      #hero button {
+        background-color: #fff;
+        border: none;
+        border-radius: 5px;
+        color: #333;
+        font-size: 20px;
+        padding: 15px 40px;
+        transition: background-color 0.3s ease;
+      }
+
+      #hero button:hover {
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      /* Features section styles */
+      #features {
+        max-width: 1200px;
+        margin: 80px auto;
+        text-align: center;
+      }
+
+      #features h2 {
+        font-size: 36px;
+        margin: 0 0 40px 0;
+      }
+
+      #features ul li {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      /* Testimonials section styles */
+      #testimonials {
+        max-width: 1200px;
+        margin: 80px auto;
+        text-align: center;
+      }
+
+      #testimonials h2 {
+        font-size: 36px;
+        margin: 0 0 40px 0;
+      }
+
+      .testimonial {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+      }
+
+      .testimonial img {
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+
+      .testimonial p {
+        font-size: 24px;
+        margin: 0;
+      }
+
+      .testimonial p:last-child {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+
+      /* Contact section styles */
+      #contact {
+        max-width: 1200px;
+        margin: 80px auto;
+        text-align: center;
+      }
+
+      #contact h2 {
+        font-size: 36px;
+        margin: 0 0 40px 0;
+      }
+
+      form label {
+        display: block;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      form input,
+      form textarea {
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      form input:focus,
+      form textarea:focus {
+        outline: none;
+        border-color: #ffffff;
+      }
+
+      #relevant-links {
+        background-color: #f5f5f5;
+        max-width: 1200px;
+        margin: 80px auto;
+        padding: 40px;
+        text-align: center;
+      }
+
+      #relevant-links h2 {
+        font-size: 36px;
+        margin: 0 0 40px 0;
+      }
+
+      .link-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 40px;
+      }
+
+      .link-card {
+        background-color: #fff;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 5px;
+      }
+
+      .link-card h3 {
+        font-size: 24px;
+        margin: 0 0 20px 0;
+      }
+
+      .link-card p {
+        font-size: 18px;
+        margin: 0;
+      }
+
+      /* Team section styles */
+      #team {
+        max-width: 1200px;
+        margin: 80px auto;
+        text-align: center;
+      }
+
+      #team h2 {
+        font-size: 36px;
+        margin: 0 0 40px 0;
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 40px;
+      }
+
+      .team-member {
+        background-color: #fff;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 5px;
+      }
+
+      .team-member img {
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+
+      .team-member h3 {
+        font-size: 24px;
+        margin: 0 0 10px 0;
+      }
+
+      .team-member p {
+        font-size: 18px;
+        margin: 0;
+      }
+
+      /* Footer styles */
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+      }
+
+      footer p {
+        margin: 0;
+        font-size: 18px;
+      }
+
+      /* Media query for smaller screens */
+      @media only screen and (max-width: 768px) {
+        #hero h1 {
+          font-size: 36px;
+        }
+
+        #hero p {
+          font-size: 18px;
+        }
+
+        #features ul li {
+          font-size: 18px;
+        }
+
+        .testimonial p {
+          font-size: 18px;
+        }
+
+        form input,
+        form textarea {
+          font-size: 16px;
+          padding: 8px;
+        }
+
+        .link-grid {
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          grid-gap: 20px;
+        }
+
+        .link-card h3 {
+          font-size: 20px;
+          margin: 0 0 10px 0;
+        }
+
+        .link-card p {
+          font-size: 16px;
+        }
+
+        .team-grid {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          grid-gap: 20px;
+        }
+
+        .team-member h3 {
+          font-size: 20px;
+          margin: 0 0 5px 0;
+        }
+
+        .team-member p {
+          font-size: 16px;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Team</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="hero">
+      <h1>Cookie Jar</h1>
+      <p>The playful way to store your cookies!</p>
+    </section>
+
+    <section id="features">
+      <div class="container">
+        <h2>Features</h2>
+        <div class="feature-item">
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50" fill="#f5deb3" />
+            <circle cx="20" cy="40" r="5" fill="#8b4513" />
+            <circle cx="30" cy="60" r="5" fill="#8b4513" />
+            <circle cx="80" cy="40" r="10" fill="#8b4513" />
+            <circle cx="40" cy="80" r="10" fill="#8b4513" />
+            <circle cx="50" cy="20" r="10" fill="#8b4513" />
+            <circle cx="70" cy="70" r="8" fill="#8b4513" />
+          </svg>
+          <h3>Easy to Use</h3>
+          <p>
+            Our Cookie Jar is incredibly simple to use. Just add your cookies,
+            set the timer, and you're good to go!
+          </p>
+        </div>
+        <div class="feature-item">
+          <canvas
+            id="cookie-canvas"
+            width="100"
+            height="100"
+            style="border: 1px solid #d3d3d3"
+          ></canvas>
+          <h3>Customizable Settings</h3>
+          <p>
+            Our Cookie Jar comes with a variety of settings to customize your
+            experience. You can set the temperature, the time, and the color of
+            the light.
+          </p>
+        </div>
+        <div class="feature-item">
+          <h3>Safe and Secure</h3>
+          <p>
+            Our Cookie Jar is made from the highest quality materials. It's safe
+            to use and will keep your cookies fresh for days.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2>Features</h2>
+      <ul>
+        <li>Fun and playful design</li>
+        <li>Airtight lid to keep cookies fresh</li>
+        <li>Available in a variety of colors and sizes</li>
+        <li>Dishwasher safe for easy cleaning</li>
+      </ul>
+    </section>
+
+    <section id="testimonials">
+      <h2>Testimonials</h2>
+      <div class="testimonial">
+        <img src="images/customer1.jpg" alt="Customer 1" />
+        <p>
+          "I absolutely love my Cookie Jar! It's so cute and keeps my cookies
+          fresh for days."
+        </p>
+        <p>- Sarah T.</p>
+      </div>
+      <div class="testimonial">
+        <img src="images/customer2.jpg" alt="Customer 2" />
+        <p>
+          "I bought one for my daughter and she can't stop talking about how
+          much she loves it."
+        </p>
+        <p>- John S.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <section id="links">
+      <h2>Links</h2>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </section>
+
+    <section id="team">
+      <h2>Our Team</h2>
+      <div class="member">
+        <img src="images/team1.jpg" alt="Team Member 1" />
+        <h3>John Smith</h3>
+        <p>CEO</p>
+      </div>
+      <div class="member">
+        <img src="images/team2.jpg" alt="Team Member 2" />
+        <h3>Jane Doe</h3>
+        <p>Marketing Director</p>
+      </div>
+      <div class="member">
+        <img src="images/team2.jpg" alt="Team Member 2" />
+        <h3>Jane Doe</h3>
+        <p>Marketing Director</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2020 Cookie Jar</p>
+    </footer>
+    <script>
+        // Get the canvas element and context
+const canvas = document.getElementById('cookie-canvas');
+const ctx = canvas.getContext('2d');
+
+// Set the canvas dimensions
+canvas.width = 200;
+canvas.height = 200;
+
+// Draw the cookie
+ctx.beginPath();
+ctx.fillStyle = '#f5deb3';
+ctx.arc(100, 100, 80, 0, 2 * Math.PI);
+ctx.fill();
+
+// Draw the chocolate chips
+const numChips = 25;
+
+for (let i = 0; i < numChips; i++) {
+  let randomSize = Math.floor(Math.random() * 6) + 4;
+  let chipSize = randomSize;
+  let chipX = Math.floor(Math.random() * (canvas.width - chipSize * 2)) + chipSize;
+  let chipY = Math.floor(Math.random() * (canvas.height - chipSize * 2)) + chipSize;
+  
+  // Check if the chip is inside the cookie
+  let dX = chipX - 100;
+  let dY = chipY - 100;
+  let distance = Math.sqrt(dX * dX + dY * dY);
+  if (distance + chipSize <= 80) {
+    // The chip is inside the cookie, so draw it
+    ctx.beginPath();
+    ctx.fillStyle = '#8b4513';
+    ctx.arc(chipX, chipY, chipSize, 0, 2 * Math.PI);
+    ctx.fill();
+  }
+}
+    </script>
+  </body>
+</html>
